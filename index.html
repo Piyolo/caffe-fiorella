@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Caffè Fiorella — Dal 1958 · Milano</title>
+<meta name="description" content="Caffè Fiorella — a retro Italian espresso bar. Every cup tells a story." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== GLOBAL SVG DEFS (filters & patterns) ===================== -->
+<svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Organic wobble filter for coffee stains -->
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <filter id="wobble-soft">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <!-- Watercolor canvas texture -->
+    <filter id="canvas-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="11" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.5" /></feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <span class="nav__brand-mark">☕</span>
+      <span class="nav__brand-name">Caffè Fiorella</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#storia">Storia</a>
+      <a href="#menu">Menù</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#visita">Visita</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero__frame" aria-hidden="true">
+    <span class="corner corner--tl"></span><span class="corner corner--tr"></span>
+    <span class="corner corner--bl"></span><span class="corner corner--br"></span>
+  </div>
+
+  <!-- decorative coffee stains -->
+  <svg class="stain stain--hero-a" viewBox="0 0 220 220" aria-hidden="true">
+    <circle cx="110" cy="110" r="86" fill="none" stroke="#4a2c1a" stroke-width="16" filter="url(#wobble)" />
+    <circle cx="110" cy="110" r="64" fill="none" stroke="#4a2c1a" stroke-width="5" filter="url(#wobble-soft)" />
+  </svg>
+  <svg class="stain stain--hero-b" viewBox="0 0 220 220" aria-hidden="true">
+    <circle cx="110" cy="110" r="90" fill="none" stroke="#6b4a2f" stroke-width="10" filter="url(#wobble)" />
+  </svg>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow" data-drift="0.10">Milano · Dal 1958</p>
+    <div class="ornament" data-drift="0.14" aria-hidden="true">
+      <span class="ornament__line"></span>
+      <svg class="ornament__fleuron" viewBox="0 0 40 20"><path d="M20 2 C14 8 8 8 4 10 c4 2 10 2 16 8 c6-6 12-6 16-8 c-4-2-10-2-16-8 Z" fill="currentColor"/></svg>
+      <span class="ornament__line"></span>
+    </div>
+    <h1 class="hero__title" data-drift="0.20">
+      <span class="hero__title-line">Caffè</span>
+      <span class="hero__title-line hero__title-line--script">Fiorella</span>
+    </h1>
+    <p class="hero__tagline" data-drift="0.28">“Ogni tazzina racconta una storia.”</p>
+    <p class="hero__tagline-en" data-drift="0.32">Every cup tells a story.</p>
+    <div class="hero__badge" data-drift="0.38" aria-hidden="true">
+      <span>Espresso</span><span class="dot">·</span><span>Bar</span><span class="dot">·</span><span>Aperitivo</span>
+    </div>
+  </div>
+
+  <!-- Hero coffee cup illustration (pure SVG) -->
+  <div class="hero__cup" id="heroCup" aria-hidden="true">
+    <svg viewBox="0 0 320 300">
+      <!-- steam -->
+      <g class="steam" stroke="#6b4a2f" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.55">
+        <path d="M132 74 c-10-14 8-22 -2-36" />
+        <path d="M164 66 c-10-14 8-22 -2-36" />
+        <path d="M196 74 c-10-14 8-22 -2-36" />
+      </g>
+      <!-- saucer -->
+      <ellipse cx="160" cy="246" rx="126" ry="26" fill="#f4e7d3" stroke="#2e1e17" stroke-width="5"/>
+      <ellipse cx="160" cy="242" rx="96" ry="18" fill="none" stroke="#b85c38" stroke-width="3" opacity="0.7"/>
+      <!-- cup body -->
+      <path d="M78 132 h164 l-16 84 a34 34 0 0 1 -34 28 h-64 a34 34 0 0 1 -34 -28 Z" fill="#f4e7d3" stroke="#2e1e17" stroke-width="5"/>
+      <!-- crema -->
+      <ellipse cx="160" cy="134" rx="82" ry="20" fill="#5b3a24"/>
+      <ellipse cx="160" cy="132" rx="66" ry="14" fill="#a9713f"/>
+      <path d="M126 132 q34 -14 68 0 q-34 12 -68 0 Z" fill="#e8c99b"/>
+      <!-- handle -->
+      <path d="M242 150 q46 6 40 46 q-6 38 -50 34" fill="none" stroke="#2e1e17" stroke-width="5"/>
+      <!-- band -->
+      <path d="M84 168 h152" stroke="#b85c38" stroke-width="6" opacity="0.85"/>
+      <path d="M88 184 h144" stroke="#6b7040" stroke-width="4" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <div class="hero__scrollcue" aria-hidden="true">
+    <span>Scorri</span>
+    <span class="hero__scrollcue-arrow">↓</span>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE BAND ===================== -->
+<div class="band" aria-hidden="true">
+  <div class="band__track">
+    <span>Espresso · Cappuccino · Macchiato · Marocchino · Corretto · Cornetto · Aperitivo ·&nbsp;</span>
+    <span>Espresso · Cappuccino · Macchiato · Marocchino · Corretto · Cornetto · Aperitivo ·&nbsp;</span>
+  </div>
+</div>
+
+<!-- ===================== SHOWCASE (scroll-driven) ===================== -->
+<section class="showcase" id="storia">
+  <div class="section-head">
+    <p class="section-head__eyebrow">La Nostra Storia</p>
+    <h2 class="section-head__title">Cinque Classici</h2>
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__line"></span>
+      <svg class="ornament__fleuron" viewBox="0 0 40 20"><path d="M20 2 C14 8 8 8 4 10 c4 2 10 2 16 8 c6-6 12-6 16-8 c-4-2-10-2-16-8 Z" fill="currentColor"/></svg>
+      <span class="ornament__line"></span>
+    </div>
+    <p class="section-head__sub">Crafted the same way since Nonna Fiorella first pulled a lever in 1958.</p>
+  </div>
+
+  <div class="showcase__stack">
+    <article class="stack-card" style="--i: 0;">
+      <div class="stack-card__frame">
+        <span class="stack-card__ghost" aria-hidden="true">I</span>
+        <figure class="stack-card__media">
+          <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=900&q=70" alt="Espresso with rich crema in a white cup" loading="lazy" />
+        </figure>
+        <div class="stack-card__body">
+          <p class="stack-card__kicker">Nº 01 · Il Fondamentale</p>
+          <h3 class="stack-card__title">Espresso</h3>
+          <p class="stack-card__italian">“L’anima del caffè”</p>
+          <p class="stack-card__text">Twenty-five seconds of patience. A dark, honeyed crema that tastes of toasted hazelnut and Sunday mornings.</p>
+          <p class="stack-card__price">€&thinsp;1,20</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack-card" style="--i: 1;">
+      <div class="stack-card__frame">
+        <span class="stack-card__ghost" aria-hidden="true">II</span>
+        <figure class="stack-card__media">
+          <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=70" alt="Cappuccino with latte art" loading="lazy" />
+        </figure>
+        <div class="stack-card__body">
+          <p class="stack-card__kicker">Nº 02 · Il Mattutino</p>
+          <h3 class="stack-card__title">Cappuccino</h3>
+          <p class="stack-card__italian">“Colazione dei campioni”</p>
+          <p class="stack-card__text">Silk micro-foam poured over a ristretto base. Ordered only before eleven — a rule we hold as sacred as nonna’s recipe.</p>
+          <p class="stack-card__price">€&thinsp;1,80</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack-card" style="--i: 2;">
+      <div class="stack-card__frame">
+        <span class="stack-card__ghost" aria-hidden="true">III</span>
+        <figure class="stack-card__media">
+          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=900&q=70" alt="Espresso macchiato marked with milk foam" loading="lazy" />
+        </figure>
+        <div class="stack-card__body">
+          <p class="stack-card__kicker">Nº 03 · Il Diplomatico</p>
+          <h3 class="stack-card__title">Caffè Macchiato</h3>
+          <p class="stack-card__italian">“Un segno di crema”</p>
+          <p class="stack-card__text">An espresso “stained” with a spoon of froth — the diplomat’s compromise between strength and softness.</p>
+          <p class="stack-card__price">€&thinsp;1,50</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack-card" style="--i: 3;">
+      <div class="stack-card__frame">
+        <span class="stack-card__ghost" aria-hidden="true">IV</span>
+        <figure class="stack-card__media">
+          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=900&q=70" alt="Marocchino coffee with cocoa dusting" loading="lazy" />
+        </figure>
+        <div class="stack-card__body">
+          <p class="stack-card__kicker">Nº 04 · Il Piemontese</p>
+          <h3 class="stack-card__title">Marocchino</h3>
+          <p class="stack-card__italian">“Velluto di cioccolato”</p>
+          <p class="stack-card__text">Piedmontese elegance: espresso, cocoa, and a veil of froth in a small glass. Velvet in a tumbler.</p>
+          <p class="stack-card__price">€&thinsp;2,20</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="stack-card" style="--i: 4;">
+      <div class="stack-card__frame">
+        <span class="stack-card__ghost" aria-hidden="true">V</span>
+        <figure class="stack-card__media">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=70" alt="Coffee served after a meal" loading="lazy" />
+        </figure>
+        <div class="stack-card__body">
+          <p class="stack-card__kicker">Nº 05 · Il Consiglio</p>
+          <h3 class="stack-card__title">Caffè Corretto</h3>
+          <p class="stack-card__italian">“Un consiglio dopo pranzo”</p>
+          <p class="stack-card__text">“Corrected” with a drop of grappa — the friendly advice your grandfather gave after Sunday lunch.</p>
+          <p class="stack-card__price">€&thinsp;2,50</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== MENU BOARD ===================== -->
+<section class="menu" id="menu">
+  <svg class="stain stain--menu" viewBox="0 0 220 220" aria-hidden="true">
+    <circle cx="110" cy="110" r="84" fill="none" stroke="#f4e7d3" stroke-width="14" filter="url(#wobble)" />
+  </svg>
+
+  <div class="menu__board" data-reveal style="--tx: 0px; --ty: 60px; --s0: 0.94;">
+    <p class="menu__eyebrow">Il Menù</p>
+    <h2 class="menu__title">Listino Prezzi</h2>
+    <div class="ornament ornament--light" aria-hidden="true">
+      <span class="ornament__line"></span>
+      <svg class="ornament__fleuron" viewBox="0 0 40 20"><path d="M20 2 C14 8 8 8 4 10 c4 2 10 2 16 8 c6-6 12-6 16-8 c-4-2-10-2-16-8 Z" fill="currentColor"/></svg>
+      <span class="ornament__line"></span>
+    </div>
+
+    <div class="menu__cols">
+      <div class="menu__col">
+        <h3 class="menu__col-title">Caffè</h3>
+        <ul class="menu__list">
+          <li><span class="menu__item">Espresso</span><span class="menu__dots"></span><span class="menu__value">1,20</span></li>
+          <li><span class="menu__item">Ristretto</span><span class="menu__dots"></span><span class="menu__value">1,20</span></li>
+          <li><span class="menu__item">Lungo</span><span class="menu__dots"></span><span class="menu__value">1,30</span></li>
+          <li><span class="menu__item">Cappuccino</span><span class="menu__dots"></span><span class="menu__value">1,80</span></li>
+          <li><span class="menu__item">Caffè Macchiato</span><span class="menu__dots"></span><span class="menu__value">1,50</span></li>
+          <li><span class="menu__item">Marocchino</span><span class="menu__dots"></span><span class="menu__value">2,20</span></li>
+          <li><span class="menu__item">Caffè Freddo</span><span class="menu__dots"></span><span class="menu__value">2,00</span></li>
+          <li><span class="menu__item">Caffè Corretto</span><span class="menu__dots"></span><span class="menu__value">2,50</span></li>
+        </ul>
+      </div>
+      <div class="menu__col">
+        <h3 class="menu__col-title">Dolci &amp; Aperitivo</h3>
+        <ul class="menu__list">
+          <li><span class="menu__item">Cornetto vuoto</span><span class="menu__dots"></span><span class="menu__value">1,40</span></li>
+          <li><span class="menu__item">Cornetto crema</span><span class="menu__dots"></span><span class="menu__value">1,70</span></li>
+          <li><span class="menu__item">Cannolo siciliano</span><span class="menu__dots"></span><span class="menu__value">2,40</span></li>
+          <li><span class="menu__item">Tiramisù della casa</span><span class="menu__dots"></span><span class="menu__value">4,00</span></li>
+          <li><span class="menu__item">Granita al limone</span><span class="menu__dots"></span><span class="menu__value">3,50</span></li>
+          <li><span class="menu__item">Spritz Fiorella</span><span class="menu__dots"></span><span class="menu__value">5,00</span></li>
+          <li><span class="menu__item">Negroni sbagliato</span><span class="menu__dots"></span><span class="menu__value">6,00</span></li>
+          <li><span class="menu__item">Vino della casa</span><span class="menu__dots"></span><span class="menu__value">3,00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="menu__note">Prices in euro · Servizio incluso · Il conto, per favore</p>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="galleria">
+  <div class="section-head">
+    <p class="section-head__eyebrow">Galleria</p>
+    <h2 class="section-head__title">Momenti di Bar</h2>
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__line"></span>
+      <svg class="ornament__fleuron" viewBox="0 0 40 20"><path d="M20 2 C14 8 8 8 4 10 c4 2 10 2 16 8 c6-6 12-6 16-8 c-4-2-10-2-16-8 Z" fill="currentColor"/></svg>
+      <span class="ornament__line"></span>
+    </div>
+    <p class="section-head__sub">Steam, marble, brass and morning light — click a frame to linger.</p>
+  </div>
+
+  <div class="gallery__grid" id="galleryGrid">
+    <figure class="frame" data-reveal style="--tx: 30px; --ty: 50px;" data-caption="Morning pour — Via della Rosa, 7:12">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=70" alt="Coffee cup on a counter" loading="lazy" />
+      <figcaption>Morning pour · 7:12</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: -30px; --ty: 50px;" data-caption="The old lever machine, polished every evening">
+      <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=70" alt="Coffee being served" loading="lazy" />
+      <figcaption>Il banco</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: 30px; --ty: 50px;" data-caption="Latte art, one steady hand">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=70" alt="Cappuccino with latte art" loading="lazy" />
+      <figcaption>Latte art</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: -30px; --ty: 50px;" data-caption="Marble counter, worn smooth by sixty years of elbows">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=70" alt="Vintage café interior" loading="lazy" />
+      <figcaption>La sala</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: 30px; --ty: 50px;" data-caption="Beans from a single Sicilian farm">
+      <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=70" alt="Coffee beans and cup" loading="lazy" />
+      <figcaption>I chicchi</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: -30px; --ty: 50px;" data-caption="Aperitivo hour — six o’clock, doors open">
+      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=70" alt="Café interior with warm light" loading="lazy" />
+      <figcaption>Aperitivo</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: 30px; --ty: 50px;" data-caption="Cornetti, still warm">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=70" alt="Fresh pastries" loading="lazy" />
+      <figcaption>I cornetti</figcaption>
+    </figure>
+    <figure class="frame" data-reveal style="--tx: -30px; --ty: 50px;" data-caption="The last cup of the night">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=70" alt="Espresso cup in low light" loading="lazy" />
+      <figcaption>L’ultima tazzina</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <figure class="lightbox__figure">
+    <img id="lbImage" alt="" />
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">›</button>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="visita">
+  <div class="footer__card" data-reveal style="--tx: 0px; --ty: 50px;">
+    <p class="footer__eyebrow">Vieni a trovarci</p>
+    <h2 class="footer__title">Caffè Fiorella</h2>
+    <div class="ornament ornament--light" aria-hidden="true">
+      <span class="ornament__line"></span>
+      <svg class="ornament__fleuron" viewBox="0 0 40 20"><path d="M20 2 C14 8 8 8 4 10 c4 2 10 2 16 8 c6-6 12-6 16-8 c-4-2-10-2-16-8 Z" fill="currentColor"/></svg>
+      <span class="ornament__line"></span>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h3>Indirizzo</h3>
+        <p>Via della Rosa 12<br />20121 Milano, Italia</p>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <p>Lun–Ven · 6:30 – 20:00<br />Sab–Dom · 7:30 – 21:00</p>
+      </div>
+      <div>
+        <h3>Contatti</h3>
+        <p>+39 02 1958 1958<br />ciao@caffefiorella.it</p>
+      </div>
+    </div>
+    <p class="footer__tagline">“Ogni tazzina racconta una storia.”</p>
+    <p class="footer__fine">© 1958–2026 Caffè Fiorella · A showcase site — no ordering, no accounts, just caffè.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
